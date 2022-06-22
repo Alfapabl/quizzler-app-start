@@ -4,7 +4,7 @@ THEME_COLOR = "#375362"
 
 
 class Quiz_interface:
-    def __int__(self, quiz_brain: QuizBrain):
+    def __init__(self, quiz_brain: QuizBrain):
         self.quiz = quiz_brain
         self.window = Tk()
         self.window.title("Quizzler")
@@ -12,12 +12,7 @@ class Quiz_interface:
         self.label = Label(text="Score: 0", fg="white")
         self.label.grid(row=0, column=1)
         self.canvas = Canvas(height=250, width=300, background="white")
-        self.text = Canvas.create_text(
-            150,
-            125,
-            text="insert questions",
-            font=("Arial", 20, "italic")
-        )
+        self.text = self.canvas.create_text(150, 125, text="insert questions", font=("Arial", 20, "italic"))
         self.canvas.grid(row=1, column=0, columnspan=2)
 
 
